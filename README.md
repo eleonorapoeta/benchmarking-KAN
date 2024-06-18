@@ -1,8 +1,8 @@
 # Benchmarking-KAN
- This repository contains the officil implementation of "Real-World Performance of Kolmogorov-Arnold Networks: A Benchmarking Study" (under review). You can use this codebase to replicate our experiments about benchmarking KAN networks on some of the molst used real-world tabular datasets.
+ This repository contains the official implementation of "Real-World Performance of Kolmogorov-Arnold Networks: A Benchmarking Study" (under review). You can use this codebase to replicate our experiments about benchmarking KAN networks on some of the most used real-world tabular datasets.
 
 # 👀 Overview
-Kolmogorov-Arnold Networks (KAN) have been recently introduced and gained a lot of attention. In this work we propose a benchmarking of KAN over some of the most used real-world datasets from [UCI Machine Learning repository](https://archive.ics.uci.edu)
+Kolmogorov-Arnold Networks (KAN) has recently been introduced and gained much attention. In this work, we propose a benchmarking of KAN over some of the most used real-world datasets from [UCI Machine Learning repository](https://archive.ics.uci.edu)
 
 
 # ⚡️ Quick start
@@ -15,8 +15,8 @@ To reproduce the experiments conducted in our study, follow these steps:
 
 After following the Quick Start guide, you can run `python main.py` specifying the following arguments:
 
-- `--model_name` = (kan, mlp, all) depending what the model you want to test.
-- `--dataset_name` = one of the tested dataset from UCI or your datasets.
+- `--model_name` = (kan, mlp, all) depending on the model you want to test.
+- `--dataset_name` = one of the tested datasets from UCI or yours.
 - `--num_epochs` = epochs of training.
 
 
