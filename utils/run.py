@@ -11,7 +11,7 @@ import numpy as np
 
 
 
-def run_single_model(f, model_name, shape_dataset, train_loader, test_loader,  num_epochs, num_classes, average='macro'):
+def run_single_model(f, dataset_name, model_name, shape_dataset, train_loader, test_loader,  num_epochs, num_classes, average='macro'):
     
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     nodes = []
@@ -31,6 +31,9 @@ def run_single_model(f, model_name, shape_dataset, train_loader, test_loader,  n
         num_intermediate_nodes = np.arange(1, 11, 1)
     else:
         num_intermediate_nodes = np.arange(10, 110, 10)
+
+    if dataset_name == 'poker':
+        num_intermediate_nodes*=10
 
     for n in num_intermediate_nodes:
 
@@ -107,12 +110,12 @@ def run_experiments(dataset_name, model_name, num_epochs):
         seed_everything(s)
         f.write(f"Seed: {s}\n")
         if model_name=='all':  
-            run_single_model(f=f, shape_dataset=shape_dataset, train_loader=train_loader, test_loader=test_loader,  
+            run_single_model(f=f, dataset_name=dataset_name, shape_dataset=shape_dataset, train_loader=train_loader, test_loader=test_loader,  
                              num_epochs=num_epochs, num_classes=c, average=average[0], model_name='kan')
-            run_single_model(f=f, shape_dataset=shape_dataset, train_loader=train_loader, test_loader=test_loader,  
+            run_single_model(f=f, dataset_name=dataset_name, shape_dataset=shape_dataset, train_loader=train_loader, test_loader=test_loader,  
                              num_epochs=num_epochs, num_classes=c, average=average[0], model_name='mlp')
         else:
-            run_single_model(f=f, model_name=model_name, shape_dataset=shape_dataset, train_loader=train_loader, test_loader=test_loader,  
+            run_single_model(f=f, dataset_name=dataset_name, model_name=model_name, shape_dataset=shape_dataset, train_loader=train_loader, test_loader=test_loader,  
                              num_epochs=num_epochs, num_classes=c, average=average[0])
             
 
