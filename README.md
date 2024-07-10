@@ -63,6 +63,8 @@ This project is licensed under the terms of the MIT license. See the [LICENSE](L
 - [ ] Allow custom number of runs (seeds) through arguments
 - [ ] Make the computation of the performance (via PAPI) optional (it may cause some errors if not enough permissions are available)
 - [ ] Add a [Contributing Guide](./CONTRIBUTING.md) 🙃
+- [ ] Describe the output format in the documentation
+- [ ] Introduce a better format for the output files
 
 # 🤝 Contributing
 Contributions, issues, and feature requests are welcome! See our [Contributing Guide](./CONTRIBUTING.md) for more details.
