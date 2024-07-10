@@ -21,11 +21,11 @@ def compute_metrics(target, output, average='macro'):
     
     
     # Calculate f1 score
-    f1 = f1_score(target.cpu().numpy(), output.argmax(1).cpu().numpy(), average=average)
+    f1 = f1_score(target.cpu().numpy(), output.argmax(1).cpu().numpy(), average=average, zero_division=0.0)
     # Calculate precision score
-    precision = precision_score(target.cpu().numpy(), output.argmax(1).cpu().numpy(), average=average)
+    precision = precision_score(target.cpu().numpy(), output.argmax(1).cpu().numpy(), average=average, zero_division=0.0)
     # Calculate recall score
-    recall = recall_score(target.cpu().numpy(), output.argmax(1).cpu().numpy(), average=average)
+    recall = recall_score(target.cpu().numpy(), output.argmax(1).cpu().numpy(), average=average, zero_division=0.0)
 
     if average == 'macro':
         # Obtain the confusion matrix
