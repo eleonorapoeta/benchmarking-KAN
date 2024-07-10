@@ -29,7 +29,7 @@ Some information on the machine used:
 - Python version: 3.10.12
 
 
-# ❌ Troubleshoting
+# ❌ Troubleshooting
 Some errors that may occur are listed below:
 
 ### PAPI\_EPERM
