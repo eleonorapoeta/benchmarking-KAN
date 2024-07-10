@@ -21,11 +21,6 @@ After following the Quick Start guide, you can run `python main.py` specifying t
 
 Note: running the experiments will currently reproduce the results presented in the paper, i.e. run the selected model(s) (mlp, kan, or both) for all model sizes considered, for a total of 5 times each (to quantify the variance of the model).
 
-# 📝 TODO
-- [ ] Allow custom model sizes through arguments
-- [ ] Allow custom number of runs (seeds) through arguments
-- [ ] Make the computation of the performance (via PAPI) optional (it may cause some errors if not enough permissions are available)
-
 # ❌ Troubleshoting
 Some errors that may occur are listed below:
 
@@ -53,6 +48,13 @@ sudo sysctl -p
 
 # 📜  License
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
+
+
+# 📝 TODO
+- [ ] Allow custom model sizes through arguments
+- [ ] Allow custom number of runs (seeds) through arguments
+- [ ] Make the computation of the performance (via PAPI) optional (it may cause some errors if not enough permissions are available)
+- [ ] Add a [Contributing Guide](./CONTRIBUTING.md) 🙃
 
 # 🤝 Contributing
 Contributions, issues, and feature requests are welcome! See our [Contributing Guide](./CONTRIBUTING.md) for more details.
