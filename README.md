@@ -19,8 +19,39 @@ After following the Quick Start guide, you can run `python main.py` specifying t
 - `--dataset_name` = one of the tested datasets from UCI or yours.
 - `--num_epochs` = epochs of training.
 
+Note: running the experiments will currently reproduce the results presented in the paper, i.e. run the selected model(s) (mlp, kan, or both) for all model sizes considered, for a total of 5 times each (to quantify the variance of the model).
 
-# 📝 License
+# 📝 TODO
+- [ ] Allow custom model sizes through arguments
+- [ ] Allow custom number of runs (seeds) through arguments
+- [ ] Make the computation of the performance (via PAPI) optional (it may cause some errors if not enough permissions are available)
+
+# ❌ Troubleshoting
+Some errors that may occur are listed below:
+
+### PAPI\_EPERM
+We use Performance Application Programming Interface (PAPI) to evaluate the performance of the models in terms of instructions executed.
+
+The following error may occur when running the code. 
+```pypapi.exceptions.PapiPermissionError: Permission level does not permit operation. (PAPI_EPERM)```
+
+Fix: 
+1. Run the code as superuser (root)
+2. Adjust the kernel parameters to allow non-root access to performance counters. You can temporarily set these parameters:
+```bash
+sudo sh -c 'echo -1 > /proc/sys/kernel/perf_event_paranoid'
+```
+3. For a more permanent solution, add the following lines to `/etc/sysctl.conf`:
+```bash
+kernel.perf_event_paranoid = -1
+kernel.perf_event_max_sample_rate = 100000
+```
+Then apply the changes:
+```bash
+sudo sysctl -p
+```
+
+# 📜  License
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
 
 # 🤝 Contributing
