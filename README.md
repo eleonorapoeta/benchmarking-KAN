@@ -21,6 +21,14 @@ After following the Quick Start guide, you can run `python main.py` specifying t
 
 Note: running the experiments will currently reproduce the results presented in the paper, i.e. run the selected model(s) (mlp, kan, or both) for all model sizes considered, for a total of 5 times each (to quantify the variance of the model).
 
+Some information on the machine used:
+- CPU: Intel(R) Core(TM) i9-10980XE
+- RAM: 128 GB DDR4 (4x32GB)
+- GPUs: NVIDIA A6000 x2
+- OS: Ubuntu 22.04
+- Python version: 3.10.12
+
+
 # ❌ Troubleshoting
 Some errors that may occur are listed below:
 
